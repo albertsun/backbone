@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Model silent set test case</title>
+</head>
+
+<body>
+
+  <table id="item-table">
+    <thead>
+      <tr>
+        <th class="state">state</th>
+        <th class="a">a</th>
+        <th class="b">b</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script src="../../test/vendor/json2.js"></script>
+  <script src="../../test/vendor/jquery-1.7.1.js"></script>
+  <script src="../../test/vendor/underscore.js"></script>
+  <script src="../../backbone.js"></script>
+  <script src="../backbone-localstorage.js"></script>
+  <script src="silent-set-test-case.js"></script>
+
+  <!-- Templates -->
+
+  <script type="text/template" id="item-template">
+      <td class="state"><%= state %></td>
+      <td class="a"><%= a %></td>
+      <td class="b"><%= b %></td>
+  </script>
+
+  </body>
+</html>
