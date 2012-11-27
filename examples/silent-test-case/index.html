@@ -9,15 +9,6 @@
 <body>
 
   <table id="item-table">
-    <thead>
-      <tr>
-        <th class="state">state</th>
-        <th class="a">a</th>
-        <th class="b">b</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
   </table>
 
   <script src="../../test/vendor/json2.js"></script>
@@ -27,12 +18,38 @@
   <script src="../backbone-localstorage.js"></script>
   <script src="silent-set-test-case.js"></script>
 
+  <style type="text/css">
+    th.active {
+      background-color: #CCC;
+    }
+  </style>
+
   <!-- Templates -->
+  <script type="text/template" id="table-template">
+    <thead>
+      <tr class="state-toggle">
+      </tr>
+      <tr class="sort-toggle">
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </script>
+
+  <script type="text/template" id="state-template">
+    <th class="draft <%= (state === 'draft') ? "active" : "" %>">draft</th>
+    <th class="published <%= (state === 'published') ? "active" : "" %>">published</th>
+  </script>
+  <script type="text/template" id="sort-template">
+    <th></th>
+    <th class="a <%= (sort === 'a') ? "active": "" %>">a</th>
+    <th class="b <%= (sort === 'b') ? "active": "" %>">b</th>
+  </script>
 
   <script type="text/template" id="item-template">
-      <td class="state"><%= state %></td>
-      <td class="a"><%= a %></td>
-      <td class="b"><%= b %></td>
+    <td class="state"><%= state %></td>
+    <td class="a"><%= a %></td>
+    <td class="b"><%= b %></td>
   </script>
 
   </body>
