@@ -963,4 +963,14 @@ $(document).ready(function() {
     expect(0);
   });
 
+  test("#1737 - `set` with silent option and setting back should trigger change event", 2, function() {
+    var model = new Backbone.Model({name: "foo", state: 0});
+    model.on("change:state", function(self,state){
+      ok(true);
+    });
+    model.set({state:1});
+    model.set({state:0},{silent:true});
+    model.set({state:1});
+  });
+
 });
